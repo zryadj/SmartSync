@@ -1,3 +1,5 @@
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 # SmartSync - A Syncthing Wrapper for Android
 
 ## About this fork
