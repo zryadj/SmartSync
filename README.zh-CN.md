@@ -16,6 +16,19 @@ Syncthing 是一款开源的、去中心化的文件同步工具，数据在您�
 - **自建更新通道**：应用内检查更新，下载完成先校验版本与 SHA256 再安装
 - **横屏与挖孔屏适配**：内容铺满全宽，页头正确让出通知栏
 
+<p align="center">
+  <img src="docs/screenshots/folders.jpg" width="170" />
+  <img src="docs/screenshots/devices.jpg" width="170" />
+  <img src="docs/screenshots/status.jpg" width="170" />
+  <img src="docs/screenshots/drawer.jpg" width="170" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/folder_edit.jpg" width="170" />
+  <img src="docs/screenshots/settings.jpg" width="170" />
+  <img src="docs/screenshots/menu.jpg" width="170" />
+</p>
+
+
 ## 安装
 
 前往 [Releases](https://github.com/zryadj/SmartSync/releases) 下载

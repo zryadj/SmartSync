@@ -14,6 +14,19 @@ Modifications in this fork (2.1.7.x, renamed **SmartSync**):
 - Self-hosted update channel with integrity checks
 - Landscape/cutout display fixes
 
+<p align="center">
+  <img src="docs/screenshots/folders.jpg" width="170" />
+  <img src="docs/screenshots/devices.jpg" width="170" />
+  <img src="docs/screenshots/status.jpg" width="170" />
+  <img src="docs/screenshots/drawer.jpg" width="170" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/folder_edit.jpg" width="170" />
+  <img src="docs/screenshots/settings.jpg" width="170" />
+  <img src="docs/screenshots/menu.jpg" width="170" />
+</p>
+
+
 Licensed under MPL-2.0, same as upstream. All credit for the original app
 belongs to the Syncthing team and the Syncthing-Fork maintainers.
 
@@ -40,11 +53,10 @@ Release signing is read from `local.properties` or environment variables
 
 A wrapper of [Syncthing](https://github.com/syncthing/syncthing) for Android. Head to the "releases" section or F-Droid for builds. Please seek help on the forum and/or social media apps first before creating issues on the tracker.
 
-<img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/1.png" alt="screenshot 1" width="200" /> · <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/2.png" alt="screenshot 2" width="200" /> · <img src="app/src/main/play/listings/en-US/graphics/phone-screenshots/4.png" alt="screenshot 3" width="200" />
 
 ## Switching from the deprecated official version
 
-Switching is easier than you may think! See our [wiki article](wiki/migration/Switching-from-the-deprecated-official-version.md) for detailed instructions.
+Switching is easier than you may think! Install SmartSync side-by-side or over the top — the package name is unchanged, so data is kept.
 
 ## Wiki and Useful Articles
 
@@ -52,7 +64,7 @@ Our knowledge base is published [here](wiki#readme).
 
 ## Building and Development Notes
 
-See [detailed info](wiki/developers/Building-and-Development.md).
+See the **Building** section below.
 
 ## Acknowledgments
 
