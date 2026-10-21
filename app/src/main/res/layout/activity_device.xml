@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/primary_dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DeviceActivity">
+
+    <include layout="@layout/widget_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:windowBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="24dp">
+
+            <!-- ============ 设备标识 ============ -->
+            <TextView
+                style="@style/Widget.Syncthing.SectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="7dp"
+                android:text="设备标识" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_list_card"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp">
+
+                <!-- Option 1: Input or edit device ID -->
+                <LinearLayout
+                    android:id="@+id/editDeviceIdContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <com.nutomic.syncthingandroid.views.EnhancedEditText
+                        android:id="@+id/editDeviceId"
+                        style="@style/Widget.Syncthing.TextView.Label.Details.Field"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/device_id"
+                        android:fontFamily="monospace"
+                        android:textSize="12.5sp"
+                        android:textColor="@color/sm_ink"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        android:focusable="true"
+                        android:nextFocusDown="@+id/name" />
+
+                    <ImageView
+                        android:id="@+id/qrButton"
+                        style="?actionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="@dimen/abc_action_bar_content_inset_material"
+                        android:contentDescription="@string/scan_qr_code_description"
+                        app:srcCompat="@drawable/outline_qr_code_2_24" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Widget.Syncthing.TextView.Label.Details"
+                    android:id="@+id/discoveredDevicesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/abc_action_bar_content_inset_material"
+                    android:clickable="true"
+                    app:drawableEndCompat="@drawable/baseline_refresh_24"
+                    android:focusable="true"
+                    android:text="@string/discovered_devices_title"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/discoveredDevicesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:focusable="false"
+                    android:visibility="gone">
+                </LinearLayout>
+
+                <!-- Option 2: Show or copy device ID -->
+                <LinearLayout
+                    android:id="@+id/showDeviceIdContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:nextFocusDown="@+id/name">
+
+                    <com.nutomic.syncthingandroid.views.EnhancedEditText
+                        android:id="@+id/showDeviceId"
+                        style="@style/Widget.Syncthing.TextView.Label.Details.Field"
+                        android:enabled="false"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="monospace"
+                        android:textSize="12.5sp"
+                        android:textColor="@color/sm_ink"
+                        android:hint="@string/device_id"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textMultiLine" />
+
+                    <ImageView
+                        android:id="@+id/deviceIdQrButton"
+                        style="?actionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="@dimen/abc_action_bar_content_inset_material"
+                        android:contentDescription="@string/share_device_id"
+                        app:srcCompat="@drawable/baseline_share_24" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ============ 基本信息 ============ -->
+            <TextView
+                style="@style/Widget.Syncthing.SectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="7dp"
+                android:text="基本信息" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_list_card"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp">
+
+                <TextView
+                    style="@style/Widget.Syncthing.FieldLabel"
+                    android:text="@string/name" />
+
+                <EditText
+                    android:id="@+id/name"
+                    style="@style/Widget.Syncthing.TextView.Label.Details.Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:importantForAutofill="no" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/sm_hairline" />
+
+            </LinearLayout>
+
+            <!-- ============ 连接与共享 ============ -->
+            <TextView
+                style="@style/Widget.Syncthing.SectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="7dp"
+                android:text="连接与共享" />
+
+            <!-- Card 1: 地址 + 共享文件夹 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_list_card"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    style="@style/Widget.Syncthing.FieldLabel"
+                    android:text="@string/addresses" />
+
+                <EditText
+                    android:id="@+id/addresses"
+                    style="@style/Widget.Syncthing.TextView.Label.Details.Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addresses"
+                    android:imeOptions="actionDone"
+                    android:inputType="textNoSuggestions"
+                    android:importantForAutofill="no" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/sm_hairline" />
+
+                <LinearLayout
+                    android:id="@+id/foldersContainer"
+                    android:background="?selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:focusable="true">
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Card 2: 中介 / 自动接受 / 暂停 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_list_card"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <LinearLayout
+                    android:id="@+id/compressionContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:focusable="true">
+
+                    <TextView
+                        style="@style/Widget.Syncthing.TextView.Label.Details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:text="@string/compression" />
+
+                    <TextView
+                        android:id="@+id/compressionValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:textColor="@color/sm_value_gray"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="@color/sm_chevron" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/sm_hairline" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/introducer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:gravity="center_vertical"
+                    android:checked="false"
+                    android:text="@string/introducer"
+                    android:textColor="@color/sm_ink"
+                    android:textSize="15.5sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/sm_hairline" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/autoAcceptFolders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:gravity="center_vertical"
+                    android:checked="false"
+                    android:text="@string/autoAcceptFolders"
+                    android:textColor="@color/sm_ink"
+                    android:textSize="15.5sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/sm_hairline" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/devicePause"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:gravity="center_vertical"
+                    android:checked="false"
+                    android:text="@string/pause_device"
+                    android:textColor="@color/sm_ink"
+                    android:textSize="15.5sp" />
+
+            </LinearLayout>
+
+            <!-- Card 3: 不受信任 / 自定义同步条件 / 连接信息 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_list_card"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <LinearLayout
+                    android:id="@+id/deviceUntrustedContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/untrusted_device"
+                            android:textColor="@color/sm_ink"
+                            android:textSize="15.5sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/deviceUntrusted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/deviceUntrustedExplanation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:text="@string/untrusted_device_explanation"
+                        android:textColor="@color/sm_ink_weak"
+                        android:textSize="12.5sp"
+                        android:focusable="false" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/sm_hairline" />
+
+                <LinearLayout
+                    android:id="@+id/customSyncConditionsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/custom_sync_conditions_title"
+                            android:textColor="@color/sm_ink"
+                            android:textSize="15.5sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/customSyncConditionsSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/customSyncConditionsDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:text="@string/custom_sync_conditions_description"
+                        android:textColor="@color/sm_ink_weak"
+                        android:textSize="12.5sp"
+                        android:focusable="false" />
+
+                    <TextView
+                        android:id="@+id/customSyncConditionsDialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/custom_sync_conditions_dialog"
+                        android:textColor="@color/sm_ink"
+                        android:textSize="15.5sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/currentAddress"
+                    style="@style/Widget.Syncthing.TextView.Label.Details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="@string/current_address"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/syncthingVersion"
+                    style="@style/Widget.Syncthing.TextView.Label.Details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="@string/syncthing_version_title"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

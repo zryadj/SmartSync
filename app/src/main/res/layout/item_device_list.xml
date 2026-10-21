@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:defaultFocusHighlightEnabled="false"
+    android:descendantFocusability="blocksDescendants">
+
+    <!-- 02 · 设备卡：左灰图标 + 名称/状态 + 次级信息统一 36dp 缩进 -->
+    <LinearLayout
+        android:id="@+id/inner"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_list_card"
+        android:defaultFocusHighlightEnabled="false"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/open_device"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_phonelink_smartisan"
+                app:tint="@color/sm_icon_gray" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/sm_ink"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="测试电脑" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/sm_ink_weak"
+                android:textSize="11.5sp"
+                tools:text="最新" />
+
+            <ImageView
+                android:id="@+id/chevron"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="6dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_chevron_right"
+                android:tint="@color/sm_chevron" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lastSeen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/sm_ink_weak"
+            android:textSize="12.5sp"
+            tools:text="最后可见：2026-10-19 19:47:25" />
+
+        <LinearLayout
+            android:id="@+id/rateInOutContainer"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/bandwidthUpDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sm_ink_weak"
+                android:textSize="12.5sp"
+                tools:text="下载 2 B/s · 上传 2 B/s" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="8dp"
+            android:background="@color/sm_hairline" />
+
+        <!-- Kept for adapter binding; design merges the title into the folder line -->
+        <TextView
+            android:id="@+id/sharedFoldersTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/sm_ink_weak"
+            android:textSize="12.5sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sharedFolders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="9dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/sm_ink_weak"
+            android:textSize="12.5sp"
+            tools:text="共享文件夹：照片备份" />
+
+    </LinearLayout>
+
+</FrameLayout>

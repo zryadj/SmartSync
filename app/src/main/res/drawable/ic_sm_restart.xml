@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+  <!-- Smartisan thin-line restart: 270° circular arrow with a single head -->
+  <path
+      android:strokeColor="@android:color/white"
+      android:strokeWidth="1.9"
+      android:strokeLineCap="round"
+      android:strokeLineJoin="round"
+      android:fillColor="#00000000"
+      android:pathData="M19,12 A7,7 0 1,1 12,5" />
+  <path
+      android:strokeColor="@android:color/white"
+      android:strokeWidth="1.9"
+      android:strokeLineCap="round"
+      android:strokeLineJoin="round"
+      android:fillColor="#00000000"
+      android:pathData="M12,5 L9.4,3.2 M12,5 L9.4,6.8" />
+</vector>

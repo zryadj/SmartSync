@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Smartisan design language: light chrome, dark ink, single yellow-green accent -->
+    <color name="primary">#FFFFFF</color>
+    <color name="primary_dark">#FFFFFF</color>
+    <color name="accent">#A8C86A</color>
+    <color name="divider">#1F000000</color>
+
+    <color name="text_black">#000000</color>
+    <color name="text_red">#C0392B</color>
+    <color name="text_blue">#5F7396</color>
+    <color name="text_green">#6E8F3D</color>
+    <color name="text_orange">#D95A28</color>
+    <color name="text_purple">#8e24aa</color>
+    <color name="blue_grey">#263238</color>
+    <color name="light_grey">#cccccc</color>
+    <color name="light_blue">#4fc4ff</color>
+
+    <!-- Smartisan app base: light gray (one step deeper so white cards float) -->
+    <color name="bg_app">#F0F0F0</color>
+
+    <!-- Smartisan canvas: #F0F0F0 base under the vertical hairline texture -->
+    <color name="bg_canvas_base">#F0F0F0</color>
+
+    <!-- Smartisan semantic palette (light). Night values live in values-night. -->
+    <color name="sm_ink">#3B3939</color>
+    <color name="sm_ink_weak">#A8AAA9</color>
+    <color name="sm_hairline">#E3E4E3</color>
+    <color name="sm_icon_gray">#8A8C8B</color>
+    <color name="sm_value_gray">#7A7C7B</color>
+    <color name="sm_chevron">#C6C8C6</color>
+    <color name="sm_card">#FFFFFF</color>
+    <color name="sm_card_inner">#F7F7F5</color>
+    <color name="sm_track">#ECEDEC</color>
+    <color name="sm_green_text">#7FA34B</color>
+
+    <!-- PhotoShootActivity intro background -->
+    <color name="bg_screen4">#5e7c8b</color>
+
+    <!-- MainActivity start -->
+    <color name="bottom_navigation_bar">#FFFFFF</color>
+    <!-- MainActivity end -->
+</resources>

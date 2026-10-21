@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget" />
+    <style name="Widget.Syncthing" />
+
+    <!-- Widget styles -->
+    <eat-comment />
+
+    <style name="Widget.Syncthing.ListView" parent="Widget.AppCompat.ListView">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="divider">@android:color/transparent</item>
+        <!-- Smartisan: no pressed/focus grey frame around list cards -->
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:defaultFocusHighlightEnabled">false</item>
+    </style>
+
+    <!-- Smartisan: rounded overflow menu popup -->
+    <style name="Widget.Syncthing.PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_popup_menu</item>
+    </style>
+
+    <style name="Widget.Syncthing.TextView" />
+
+    <style name="Widget.Syncthing.TextView.Label" parent="@android:style/Widget.TextView">
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <!-- Smartisan: ink label on white card -->
+        <item name="android:textColor">@color/sm_ink</item>
+        <item name="android:paddingLeft">@dimen/abc_action_bar_content_inset_material</item>
+        <item name="android:paddingRight">@dimen/abc_action_bar_content_inset_material</item>
+    </style>
+
+    <style name="Widget.Syncthing.TextView.Label.Details">
+        <!-- Smartisan: no horizontal inset so styled titles align with plain text -->
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/sm_ink</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="Widget.Syncthing.TextView.Label.Details.WifiSsidList">
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <!-- Smartisan: compact ink dialog title -->
+    <style name="TextAppearance.Syncthing.DialogTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/sm_ink</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.Syncthing.TextView.Label.Details.DeviceList">
+        <!-- Smartisan: align with plain switch rows (no extra inset) -->
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textColor">@color/sm_ink</item>
+        <item name="android:textSize">15.5sp</item>
+    </style>
+
+    <style name="Widget.Syncthing.TextView.Label.Details.Field">
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="Widget.Syncthing.DrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <!-- Smartisan: dark ink on light toolbar -->
+        <item name="color">@color/sm_ink</item>
+    </style>
+
+    <!-- Smartisan hairline divider, starts after the text column -->
+    <style name="Widget.Syncthing.ListDivider" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/sm_hairline</item>
+    </style>
+
+    <!-- Text appearances -->
+    <eat-comment />
+
+    <style name="TextAppearance.Syncthing.ListItemPrimary" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Syncthing.ListItemSecondary" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Syncthing.ListItemSmall" parent="TextAppearance.AppCompat.Caption" />
+
+    <style name="Widget.Syncthing.TextView.SpinnerItem" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <!-- Smartisan section header inside cards -->
+    <style name="Widget.Syncthing.SectionHeader">
+        <item name="android:textColor">@color/sm_ink_weak</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <!-- Smartisan 12sp weak field label above an input -->
+    <style name="Widget.Syncthing.FieldLabel">
+        <item name="android:textColor">@color/sm_ink_weak</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+
+    <!-- Smartisan segmented control item -->
+    <style name="Widget.Syncthing.SegmentedItem">
+        <item name="android:background">@drawable/seg_item_bg</item>
+        <item name="android:textColor">@color/seg_item_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- SegmentedButton -->
+    <style name="TextViewStyleSegmentedButtonHeader">
+        <item name="android:textSize">13sp</item>
+        <!-- Smartisan: ink text reads on both the yellow-green and light segments -->
+        <item name="android:textColor">@color/sm_ink</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="progressBarBlue" parent="@style/Theme.AppCompat">
+        <!-- Smartisan: yellow-green progress -->
+        <item name="colorAccent">@color/accent</item>
+    </style>
+</resources>

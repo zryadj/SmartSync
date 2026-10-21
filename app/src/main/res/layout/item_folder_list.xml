@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:defaultFocusHighlightEnabled="false"
+    android:descendantFocusability="blocksDescendants">
+
+    <!-- 01 · 文件夹卡：左灰图标 + 标题/路径 + 通栏进度 + 底行（状态 大小 | 文件数） -->
+    <LinearLayout
+        android:id="@+id/inner"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_list_card"
+        android:defaultFocusHighlightEnabled="false"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <!-- Type glyph doubles as "open in file manager" -->
+            <ImageButton
+                android:id="@+id/openFolder"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:contentDescription="@string/open_file_manager"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/baseline_folder_24"
+                app:tint="@color/sm_icon_gray" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/sm_ink"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="照片备份" />
+
+                <TextView
+                    android:id="@+id/directory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/sm_ink_weak"
+                    android:textSize="12sp"
+                    tools:text="/storage/emulated/0/DCIM" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/chevron"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="6dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_chevron_right"
+                android:tint="@color/sm_chevron" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="12dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/progress_smartisan" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="10dp"
+            android:background="@color/sm_hairline" />
+
+        <!-- Bottom row: state + size (left) · file count (right), one line, unified 12.5sp -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/sm_ink_weak"
+                android:textSize="12.5sp"
+                tools:text="最新" />
+
+            <TextView
+                android:id="@+id/folderSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/sm_value_gray"
+                android:textSize="12.5sp"
+                tools:text="18.1 GB" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/sm_ink_weak"
+                android:textSize="12.5sp"
+                tools:text="8894 / 8894 个文件" />
+
+        </LinearLayout>
+
+        <!-- Kept for adapter binding; design keeps the bottom row to one line -->
+        <TextView
+            android:id="@+id/lastItemFinishedTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/sm_ink_weak"
+            android:textSize="12.5sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/lastItemFinishedItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/sm_ink_weak"
+            android:textSize="12.5sp"
+            android:visibility="gone" />
+
+        <!-- Optional action row: override / revert local changes -->
+        <LinearLayout
+            android:id="@+id/override_revert_container"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/override"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/override_changes"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/override_changes"
+                app:drawableLeftCompat="@drawable/ic_cloud_upload_smartisan"
+                app:drawableStartCompat="@drawable/ic_cloud_upload_smartisan"
+                android:drawablePadding="5sp"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/revert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/revert_local_changes"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/revert_local_changes"
+                app:drawableLeftCompat="@drawable/ic_cloud_download_smartisan"
+                app:drawableStartCompat="@drawable/ic_cloud_download_smartisan"
+                android:drawablePadding="5sp"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/conflicts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?textAppearanceListItemSecondary"
+            android:textColor="@color/text_orange" />
+
+        <TextView
+            android:id="@+id/invalid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?textAppearanceListItemSecondary"
+            android:textColor="@color/text_red" />
+
+    </LinearLayout>
+
+</FrameLayout>

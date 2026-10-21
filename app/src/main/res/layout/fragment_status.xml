@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Smartisan: card 1 — completion ring, run control and collapsible reason -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/bg_list_card"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp">
+
+        <!-- Completion ring + sub caption -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="10dp">
+
+            <com.nutomic.syncthingandroid.views.CompletionRingView
+                android:id="@+id/completionRing"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                tools:ignore="MissingClass" />
+
+            <TextView
+                android:id="@+id/tvRingSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/sm_ink_weak"
+                android:textSize="12.5sp"
+                tools:text="全局状态 · 已同步 6.2 GB / 10.0 GB" />
+
+        </LinearLayout>
+
+        <com.nutomic.syncthingandroid.views.SegmentedButton
+            android:id="@+id/forceStartStop"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            app:gradientColorOnStart="#A8C86A"
+            app:gradientColorOnEnd="#A8C86A"
+            app:gradientColorOffStart="@color/sm_card_inner"
+            app:gradientColorOffEnd="@color/bg_app"
+            app:gradientColorSelectedStart="#8FB255"
+            app:gradientColorSelectedEnd="#8FB255"
+            app:textStyle="@style/TextViewStyleSegmentedButtonHeader"
+            app:strokeColor="@color/sm_hairline"
+            app:strokeWidth="1dp"
+            app:cornerRadius="8dp"
+            app:btnPaddingTop="0dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sm_hairline" />
+
+        <!-- Reason row (tap to expand the explanation) -->
+        <LinearLayout
+            android:id="@+id/reasonHeader"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_reason"
+                android:textColor="@color/sm_value_gray"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/reasonArrow"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_chevron_right"
+                android:tint="@color/sm_chevron"
+                android:rotation="90" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/reasonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:lineSpacingExtra="2dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/sm_ink_weak"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Smartisan: card 2 — key/value pairs -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_list_card"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_kv_uptime"
+                android:textColor="@color/sm_value_gray"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/kvUptimeVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/sm_ink"
+                android:textSize="14sp"
+                tools:text="5 分钟" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sm_hairline" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_kv_ram"
+                android:textColor="@color/sm_value_gray"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/kvRamVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/sm_ink"
+                android:textSize="14sp"
+                tools:text="16.6 MiB" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sm_hairline" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_kv_download"
+                android:textColor="@color/sm_value_gray"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/kvDownloadVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/sm_ink"
+                android:textSize="14sp"
+                tools:text="0 B/s（2.2 KiB）" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sm_hairline" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_kv_upload"
+                android:textColor="@color/sm_value_gray"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/kvUploadVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/sm_ink"
+                android:textSize="14sp"
+                tools:text="0 B/s（1.5 KiB）" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sm_hairline" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_kv_announce"
+                android:textColor="@color/sm_value_gray"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/kvAnnounceVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/sm_ink"
+                android:textSize="14sp"
+                tools:text="4 / 5" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

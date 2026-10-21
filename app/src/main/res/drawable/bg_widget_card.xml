@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Smartisan widget card: rounded surface that follows the day/night palette. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/sm_card" />
+    <corners android:radius="20dp" />
+</shape>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Smartisan (dark): dark chrome, same yellow-green accent -->
+    <color name="primary">#1D2329</color>
+    <color name="primary_dark">#1D2329</color>
+    <color name="accent">#A8C86A</color>
+
+    <color name="text_red">#E06A55</color>
+    <color name="text_blue">#8D9FBF</color>
+    <color name="text_green">#A8C86A</color>
+    <color name="text_orange">#E8672F</color>
+
+    <!-- MainActivity start -->
+    <color name="bottom_navigation_bar">#263238</color>
+    <!-- MainActivity end -->
+
+    <!-- Smartisan app base (dark) -->
+    <color name="bg_app">#171C21</color>
+    <color name="bg_canvas_base">#171C21</color>
+
+    <!-- Smartisan semantic palette (dark) -->
+    <color name="sm_ink">#E1E4E8</color>
+    <color name="sm_ink_weak">#A0A5A9</color>
+    <color name="sm_hairline">#3A424A</color>
+    <color name="sm_icon_gray">#8F959C</color>
+    <color name="sm_value_gray">#9AA0A6</color>
+    <color name="sm_chevron">#5C6570</color>
+    <color name="sm_card">#1D2329</color>
+    <color name="sm_card_inner">#272F37</color>
+    <color name="sm_track">#2C343C</color>
+    <color name="sm_green_text">#A8C86A</color>
+</resources>

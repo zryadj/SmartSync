@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Smartisan (dark).
+
+      IMPORTANT: a same-named style in values-night REPLACES the day style entirely
+      (styles are not merged across qualifiers), so this night Base must carry every
+      item from the day Theme.Syncthing.Base. All colors reference semantic resources
+      (@color/sm_*, @color/primary, @drawable/bg_canvas, ...) that resolve to their
+      night variants automatically; the only real difference here is
+      windowLightStatusBar=false.
+    -->
+    <style name="Theme.Syncthing.Base" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Smartisan up indicator (thin line arrow, night variant drawable) -->
+        <item name="homeAsUpIndicator">@drawable/ic_arrow_back_smartisan</item>
+        <!-- Smartisan: HarmonyOS Sans globally -->
+        <item name="android:fontFamily">@font/harmonyos_sans_sc</item>
+        <item name="fontFamily">@font/harmonyos_sans_sc</item>
+
+        <item name="textAppearanceListItemPrimary">@style/TextAppearance.Syncthing.ListItemPrimary</item>
+        <item name="textAppearanceListItemSecondary">@style/TextAppearance.Syncthing.ListItemSecondary</item>
+        <item name="textAppearanceListItemSmall">@style/TextAppearance.Syncthing.ListItemSmall</item>
+
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:listViewStyle">@style/Widget.Syncthing.ListView</item>
+        <item name="android:listDivider">@drawable/list_divider_inset</item>
+        <item name="drawerArrowStyle">@style/Widget.Syncthing.DrawerArrowToggle</item>
+
+        <item name="actionBarSize">@dimen/abc_action_bar_default_height_material</item>
+
+        <item name="spinnerStyle">@style/Widget.AppCompat.Spinner.Underlined</item>
+        <item name="android:spinnerItemStyle">@style/Widget.Syncthing.TextView.SpinnerItem</item>
+        <item name="alertDialogTheme">@style/Theme.Syncthing.Dialog</item>
+
+        <!-- Smartisan canvas (night drawable picked up automatically) -->
+        <item name="android:windowBackground">@drawable/bg_canvas</item>
+
+        <!-- Smartisan: no press ripple / grey shadow animation anywhere -->
+        <item name="selectableItemBackground">@drawable/bg_no_ripple</item>
+        <item name="selectableItemBackgroundBorderless">@drawable/bg_no_ripple</item>
+        <item name="android:selectableItemBackground">@drawable/bg_no_ripple</item>
+        <item name="actionBarItemBackground">@drawable/bg_no_ripple</item>
+        <item name="android:actionBarItemBackground">@drawable/bg_no_ripple</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <!-- Smartisan: rounded overflow menu -->
+        <item name="popupMenuStyle">@style/Widget.Syncthing.PopupMenu</item>
+        <item name="android:popupMenuStyle">@style/Widget.Syncthing.PopupMenu</item>
+    </style>
+
+    <!-- Toolbar overlay: light content on the dark toolbar. -->
+    <style name="ThemeOverlay.Syncthing.Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:textColorPrimary">@color/sm_ink</item>
+        <item name="colorControlNormal">@color/sm_ink</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="Widget.Syncthing.DrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">@color/sm_ink</item>
+    </style>
+</resources>

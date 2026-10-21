@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Smartisan canvas: light gray base -->
+    <item android:drawable="@color/bg_canvas_base" />
+    <!-- Smartisan canvas: faint vertical hairline texture (2px line every 6px) -->
+    <item>
+        <bitmap
+            android:src="@drawable/bg_stripe"
+            android:tileMode="repeat"
+            android:gravity="top|start" />
+    </item>
+</layer-list>

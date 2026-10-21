@@ -1,0 +1,21 @@
+changelog:
+  exclude:
+    labels:
+      - build
+      - dependencies
+      - documentation
+      - invalid
+      - java
+
+  categories:
+    - title: Fixes
+      labels:
+        - bug
+
+    - title: Features
+      labels:
+        - enhancement
+
+    - title: Other
+      labels:
+        - '*'
